@@ -46,27 +46,52 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
 	<h1>Quality: About This Data Set</h1>
-        <p>Write a brief summary about the quality of the data set here</a></p>
+        <p>The quality of this data set is overall good, except just a few blank values and a little noise.
+			Apart from that, the data set is clean and well structured.</a></p>
       </div>
 
     
       <div class="page-header">
 	<h2>Is the data complete?</h2>
-	<p>If not, what is missing and what concerns does it raise?
-	What is your evidence for this?</p>
-      </div>
+	<p>The original data is not very complete. It has 4 out of 100 rows missing author's name. It raises the concern that it is hard to 
+	find out the top ten profitable author since 4 is not a small number comparing to 100.
+	<br>
+	We can see this from the visualization of the pie chart describing relation between the author and the volumes of books written by him.
+	The graph is shown below with the top ten results included.
+	The rating of N/As is 7, which avoids people to know the true results.
+	<iframe width="1000" height="600" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;q=select+col3%2C+SUM(col6)+from+10XuZkt91N2HP0SFrJF8sBO1Re-d-T03bZXthpcnm+group+by+col3+order+by+SUM(col6)+desc+limit+10&amp;viz=GVIZ&amp;t=PIE&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;width=1000&amp;height=600"></iframe>
+	</p>
+	</div>
       
       <div class="page-header">
 	<h2>Is the data coherent?</h2>
-	<p>Does it make sense relative to itself? Does it match your
-	expectations? Are the distributions sensible? What is your
-	evidence for this?</p>
+	<p>It quite makes sense relative to itself and matches the common sense. We can see from the above pie chart that J.K. Rowling
+	wrote books with the most number of volumes followed by Dan Brown, which quite makes sense.
+	<br>
+	If we look at another pie chart that illustrates the top ten books with the largest volume, we can see that The Da Vinci Code ranks
+	the first, followed by books of Harry Potter series.
+	<iframe width="1000" height="600" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;q=select+col2%2C+SUM(col6)+from+10XuZkt91N2HP0SFrJF8sBO1Re-d-T03bZXthpcnm+group+by+col2+order+by+SUM(col6)+desc+limit+10&amp;viz=GVIZ&amp;t=PIE&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;width=1000&amp;height=600"></iframe>
+	<br>
+	Another angle to view it is to see the performance in each categories of book, which is shown below. We can see that children's 
+	fiction ranks first, followed by crime thriller and adventure. This agrees with the common sense.
+	<iframe width="1000" height="600" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;q=select+col12%2C+AVERAGE(col6)+from+10XuZkt91N2HP0SFrJF8sBO1Re-d-T03bZXthpcnm+group+by+col12+order+by+AVERAGE(col6)+desc+limit+30&amp;viz=GVIZ&amp;t=COLUMN&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;width=1000&amp;height=600"></iframe>
+	
+	</p>
       </div>
 
       <div class="page-header">
 	<h2>Is the data correct?</h2>
-	<p>What aspects of this data can you verify? How did you do so? What did
-	you find?</p>
+	<p>I can verify from the aspect that the more volume, the larger value. By doing so, I plot a chart with value and volume
+	changing with respect to the publication date, as is shown below. We can find the trend that matches with our assumption.
+	Also, there is a trend of increasing value as time goes by, which is reasonable according to our common sense.
+	<iframe width="1000" height="600" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;viz=GVIZ&amp;t=LINE_AGGREGATE&amp;isXyPlot=true&amp;bsize=0.0&amp;q=select+col11%2C+col7%2C+col6+from+10XuZkt91N2HP0SFrJF8sBO1Re-d-T03bZXthpcnm&amp;qrs=+where+col11+%3E%3D+&amp;qre=+and+col11+%3C%3D+&amp;qe=+order+by+col11+asc&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;width=1000&amp;height=600"></iframe>
+	<br>
+	I can also verify the value and volume according to its binding. In the below chart, I includes relationship between the two
+	ways of binding and the value and volume. We can see that even though the volume of paperback is higher than that of hardback, 
+	the value of the hardback is greater than that of paperback. This is reasonable since hardback is usually more expensive than the paperback.
+	<br>
+	<iframe width="1000" height="600" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;q=select+col10%2C+AVERAGE(col6)%2C+AVERAGE(col7)+from+10XuZkt91N2HP0SFrJF8sBO1Re-d-T03bZXthpcnm+group+by+col10+order+by+AVERAGE(col6)+asc+limit+10&amp;viz=GVIZ&amp;t=COLUMN&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;width=1000&amp;height=600"></iframe>
+	</p>
       </div>
 
     </div> <!-- /container -->
